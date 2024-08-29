@@ -1,0 +1,62 @@
+    <!-- Contenedor General -->
+    <div class="login-container">
+        <!-- Bloque Izquierdo -->
+        <div class="login-left">
+          <img src="assets/login-background.jpeg" alt="Imagen de Login" />
+        </div>
+        <!-- Bloque Derecho -->
+        <div class="login-right">
+          <h1>Iniciar Sesión en <span class="gradient-text">MargaRed</span></h1>
+          <p>Completa los siguientes campos por favor</p>
+          <!-- Formulario -->
+          <form id="login-form">
+            <!-- Campo de Usuario -->
+            <div class="input-group">
+              <div class="input-header">
+                <i class="fas fa-user"></i>
+                <label for="username">Usuario</label>
+              </div>
+              <input type="text" id="username" name="username" required />
+            </div>
+  
+            <!-- Campo de Contraseña -->
+            <div class="input-group">
+              <div class="input-header">
+                <i class="fas fa-lock"></i>
+                <label for="password">Contraseña</label>
+              </div>
+              <input type="password" id="password" name="password" required />
+            </div>
+            
+            <!-- Campo de Código Verificación -->
+            <div class="input-group">
+              <div class="input-header">
+                <i class="fas fa-key"></i>
+                <label for="verification-code">Código de verificación</label>
+              </div>
+              <input type="text" id="verification-code" name="verification-code" readonly />
+            </div>
+            
+            <!-- Campo para verificar código -->
+            <div class="input-group">
+              <div class="input-header">
+                <i class="fas fa-check-circle"></i>
+                <label for="verify-code">Verificar código</label>
+              </div>
+              <input type="text" id="verify-code" name="verify-code" required />
+            </div>
+  
+            <div class="button-link-container">
+              <!-- Enlace al costado del botón -->
+              <a href="forgot-password.html" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+              
+              <!-- Botón de Iniciar Sesión -->
+              <button type="submit">Iniciar Sesión</button>
+          
+  
+          </div>
+  
+          
+          </form>
+        </div>
+      </div>
