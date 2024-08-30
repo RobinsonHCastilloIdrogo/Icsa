@@ -1,62 +1,119 @@
-    <!-- Contenedor General -->
-    <div class="login-container">
-        <!-- Bloque Izquierdo -->
-        <div class="login-left">
-          <img src="assets/login-background.jpeg" alt="Imagen de Login" />
-        </div>
-        <!-- Bloque Derecho -->
-        <div class="login-right">
-          <h1>Iniciar Sesión en <span class="gradient-text">MargaRed</span></h1>
-          <p>Completa los siguientes campos por favor</p>
-          <!-- Formulario -->
-          <form id="login-form">
-            <!-- Campo de Usuario -->
-            <div class="input-group">
-              <div class="input-header">
-                <i class="fas fa-user"></i>
-                <label for="username">Usuario</label>
-              </div>
-              <input type="text" id="username" name="username" required />
-            </div>
-  
-            <!-- Campo de Contraseña -->
-            <div class="input-group">
-              <div class="input-header">
-                <i class="fas fa-lock"></i>
-                <label for="password">Contraseña</label>
-              </div>
-              <input type="password" id="password" name="password" required />
-            </div>
-            
-            <!-- Campo de Código Verificación -->
-            <div class="input-group">
-              <div class="input-header">
-                <i class="fas fa-key"></i>
-                <label for="verification-code">Código de verificación</label>
-              </div>
-              <input type="text" id="verification-code" name="verification-code" readonly />
-            </div>
-            
-            <!-- Campo para verificar código -->
-            <div class="input-group">
-              <div class="input-header">
-                <i class="fas fa-check-circle"></i>
-                <label for="verify-code">Verificar código</label>
-              </div>
-              <input type="text" id="verify-code" name="verify-code" required />
-            </div>
-  
-            <div class="button-link-container">
-              <!-- Enlace al costado del botón -->
-              <a href="forgot-password.html" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
-              
-              <!-- Botón de Iniciar Sesión -->
-              <button type="submit">Iniciar Sesión</button>
-          
-  
+<div
+  class="flex justify-center items-center h-screen bg-gradient-to-b from-[#14213D] to-[#000000]"
+>
+  <!-- Contenedor General -->
+  <div
+    class="flex w-full max-w-screen-lg h-3/4 bg-white shadow-lg rounded-2xl overflow-hidden"
+  >
+    <!-- Bloque Izquierdo -->
+    <div class="w-1/2">
+      <img
+        src="assets/login-background.jpeg"
+        alt="Imagen de Login"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- Bloque Derecho -->
+    <div class="w-1/2 p-10 flex flex-col justify-center">
+      <h1 class="text-2xl font-bold mb-2 text-black">
+        Iniciar Sesión en
+        <span
+          class="bg-gradient-to-r from-yellow-400 to-orange-600 text-transparent bg-clip-text"
+          >MargaRed</span
+        >
+      </h1>
+      <p class="text-sm mb-5 text-gray-600">
+        Completa los siguientes campos por favor
+      </p>
+      <!-- Formulario -->
+      <form (ngSubmit)="onLogin()" id="login-form">
+        <!-- Campo de Usuario -->
+        <div class="mb-5">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-user text-yellow-400 mr-2"></i>
+            <label for="username" class="text-blue-900 text-sm">Usuario</label>
           </div>
-  
-          
-          </form>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            required
+            class="w-full p-2 text-sm border rounded-md border-gray-300"
+          />
         </div>
-      </div>
+
+        <!-- Campo de Contraseña -->
+        <div class="mb-5">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-lock text-yellow-400 mr-2"></i>
+            <label for="password" class="text-blue-900 text-sm"
+              >Contraseña</label
+            >
+          </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+            class="w-full p-2 text-sm border rounded-md border-gray-300"
+          />
+        </div>
+
+        <!-- Campo de Código Verificación -->
+        <div class="mb-5">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-key text-yellow-400 mr-2"></i>
+            <label for="generated-code" class="text-blue-900 text-sm"
+              >Código de verificación</label
+            >
+          </div>
+          <input
+            type="text"
+            id="generated-code"
+            name="generated-code"
+            [(ngModel)]="generatedCode"
+            readonly
+            class="w-full p-2 text-sm border rounded-md border-gray-300 bg-gray-100 cursor-not-allowed"
+          />
+        </div>
+
+        <!-- Campo para Ingresar el Código Verificación -->
+        <div class="mb-5">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
+            <label for="user-verification-code" class="text-blue-900 text-sm"
+              >Ingrese el código de verificación</label
+            >
+          </div>
+          <input
+            type="text"
+            id="user-verification-code"
+            name="user-verification-code"
+            [(ngModel)]="verificationCode"
+            required
+            class="w-full p-2 text-sm border rounded-md border-gray-300"
+          />
+        </div>
+
+        <div class="flex items-center">
+          <!-- Enlace al costado del botón -->
+          <a
+            routerLink="/contrasena"
+            class="text-xs text-blue-900 hover:text-yellow-400 mr-4"
+            >¿Olvidaste tu contraseña?</a
+          >
+
+          <!-- Botón / Enlace de Iniciar Sesión -->
+          <button
+            routerLink="/inicio"
+            class="bg-gradient-to-r from-yellow-400 to-orange-600 text-white font-bold py-2 px-4 rounded-md hover:from-yellow-500 hover:to-orange-700 transition-colors"
+          >
+            Iniciar Sesión
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
